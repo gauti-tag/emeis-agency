@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienvenue au casting de l'agence Emeis</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+<!--1 verification pour supprimer les attributs unitiles (GAUTIER)-->
+<!--2 Paramétrer les validations coté client (GAUTIER)-->
+<!--Incrémenter la saisie numérique de la taille du candidat [incrément de 0.1m] (GAUTIER)-->
+<!--3 Version mobile et tablettes avec media query (LOGAN)-->
+
+<body>
+  
+  <div class="sucess">
+      <div class="icon-validation">
+        <img
+          src="assets/img/success.png"
+          alt="icone de validation"
+        />
+      </div>
+      <p>Votre candidature à bien été envoyée!</p>
+  </div>
+  <div class="failed">
+      <div class="icon-failed">
+        <img src="assets/img/failed.png" alt="" />
+      </div>
+      <p>Erreur de chargement, réessayez en actualisant la page SVP!</p>
+  </div>
+
+  <div class="grd-Container box-shadow">
+    <div class="flex-item-grd panneau-gauche">
+      <img class="model modell" src="assets/img/girl.jpg" alt="jeune femme africaine heureuse" />
+      <img style="z-index: 1" class="model modelr" src="assets/img/man.jpg" alt="jeune homme africain heureux" />
+    </div>
+    <form class="flex-item-grd panneau-droit" action="#" method="post" enctype="multipart/form-data" id="emeisForm">
+
+      <div class="form-head">
+        <h3>Formulaire de Casting hôtesses et hôtes</h3>
+        <img class="logo" src="assets/img/logo/logo_emeis.jpg" alt="logo emeis agency" />
+      </div>
+      <div class="form-group">
+        <label for="genre">Genre</label>
+        <select name="genre" id="genre" autofocus>
+          <option value="Mlle">Mlle</option>
+          <option value="Mme">Mme</option>
+          <option value="M.">M.</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Nom et prénoms" name="nom_prenom" id="nom_prenom" autocomplete="off" />
+        <div class="comments"></div>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Lieu de résidence" name="residence" id="residence" autocomplete="off" />
+        <div class="comments"></div>
+      </div>
+      <div class="physique">
+        <div class="left">
+          <label for="age">Age<span class="comments" id="asteAge"></span></label>
+          <select name="age" id="age">
+            <option value="">Select...</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="35">35</option>
+          </select>
+        </div>
+        <div class="right">
+          <label for="taille">Taille<span class="comments" id="asteTaille"></span><small>(mètre)</small></label>
+          <input type="number" step="any" name="taille" id="taille" placeholder="ex:1.70" autocomplete="off" /><br>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="text" placeholder="Téléphone" name="telephone" id="telephone" autocomplete="off" />
+        <div class="comments"></div>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Whatsapp" name="whatsapp" id="whatsapp" autocomplete="off" />
+        <div class="comments"></div>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Email" name="email" id="email" autocomplete="off" />
+        <div class="comments"></div>
+      </div>
+      <p class="r-full">
+        <label for="experience">Avez-vous déjà travaillé comme hôte ou hotesse?</label><br /><br />
+        <input type="radio" id="experience1" name="experience" value="1" />Oui
+        <input type="radio" id="experience2" name="experience" value="0" checked />Non
+      </p>
+      <p style="margin-bottom: 0px">Importez deux photos de vous</p>
+      <div id="import" class="comments" style="text-align: center;"></div>
+      <div class="uploadeur">
+        <input type="file" name="photo_un" id="up1" onchange="readURL1(this);" accept="image/*" />
+        <label for="up1"> Importer photo 1 </label>  
+        <img src="#" alt="" class="photo1" id="photo1" name="photo1" />
+        <input type="hidden" name="image_title1" id="image_title1">
+      </div>
+
+      <div class="uploadeur">
+        <input type="file" name="photo_deux" id="up2" onchange="readURL2(this);" accept="image/*"/>
+        <label for="up2"> Importer photo 2 </label>
+        <img src="#" alt="" class="photo2" id="photo2" name="photo2" />
+        <input type="hidden" name="image_title2" id="image_title2">
+      
+      </div>
+
+      <div class="form-submit">
+        <input type="submit" value="Soumettre" class="submit-butt" />
+      </div>
+    </form>
+  </div>
+  <div class="powered">
+    <p>Déployé par Topdigitalevel - 2022</p>
+  </div>
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+
+</html>
